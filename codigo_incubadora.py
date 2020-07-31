@@ -134,5 +134,35 @@ while True:
         conn2.close()
     except:
         print "Fallo de conexion"
+    temp=int(temp*10)
+	hum=int(hum*10)
+	print (temp,hum)
+	print ('envio 1')
+	arduino.write(str('a'))
+	holaa=arduino.readline()
+	print holaa
+	print ('enviar AC')
+	arduino.write(numero)
+	holaa=arduino.readline()
+	print holaa
+	time.sleep(1)
+	print ('envio 2')
+	arduino.write(str('b'))
+	holaa=arduino.readline()
+	print holaa
+	numero=str(hum)
+	print ('enviar Humedad')
+	arduino.write(numero)
+	holaa=arduino.readline()
+	print holaa
+	print ('envio 3')
+	arduino.write(str('c'))
+	holaa=arduino.readline()
+	print holaa
+	numero=str(temp)
+	print ('enviar Temperatura')
+	arduino.write(numero)
+	holaa=arduino.readline()
+	print holaa
     time.sleep(1)
 arduino.close()
